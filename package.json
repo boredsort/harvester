@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "puppeteer": "^11.0.0",
+    "redis-modules-sdk": "^1.0.1"
+  }
+}
