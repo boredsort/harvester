@@ -18,7 +18,6 @@ async function start() {
     let userArgs = []
     let userInput = process.argv.slice(2)
     
-    console.log(userInput)
     if (userInput.length > 0) {
     
         while(userInput.length){

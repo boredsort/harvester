@@ -61,7 +61,7 @@ module.exports.Harvester = async (options) => {
                     let results = document.querySelectorAll("div.g");
                     for(res of results){
                         let a_tag = res.querySelector('div.yuRUbf > a')
-                        console.log(a_tag)
+
                         if (a_tag) {
                             urls.push(a_tag.href)
                         } 

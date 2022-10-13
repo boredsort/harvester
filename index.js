@@ -59,7 +59,7 @@ const search_string = 'batman';
                     }
                 })
 
-                console.log(result_urls)
+                // console.log(result_urls)
 
             }
             catch(error){
