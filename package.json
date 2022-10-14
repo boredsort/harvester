@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "puppeteer": "^11.0.0",
-    "redis-modules-sdk": "^1.0.1"
+    "puppeteer": "^18.2.1",
+    "redis-modules-sdk": "^1.0.1",
+    "yargs": "^17.6.0"
   }
 }
