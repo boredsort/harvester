@@ -1,7 +1,7 @@
-// const yargs = require('yargs/yargs');
-// const { hideBin } = require('yargs/helpers');
+
 const puppeteer = require('puppeteer');
-const { appendFile } = require('fs/promises');
+const { appendFile  } = require('fs/promises');
+const fs = require('fs');
 const harvester = require('./harvester');
 
 
@@ -31,12 +31,33 @@ async function start(argv) {
         result[`page-${i}`] = await app.harvest()
         await app.next()
     }
+    let today = new Date()
+    result_obj = {
+      "meta": {
+        "searchKey": searchKey,
+        "date": today.toISOString()
+      },
+      "results": result
+    }
 
     console.log('Writing search results...')
-    for( let i = 1; i <= Object.keys(result).length; i++ ) {
-        await appendFile('results.json', JSON.stringify(result, null, 4))
+    let tmp_name = searchKey.replaceAll(/\s/g, "-")
+    let timestamp = today.valueOf()
 
-    }   
+    let resultDir = 'result'
+
+    try{
+      if (!fs.existsSync(resultDir)){
+        fs.mkdirSync(resultDir);
+      }
+  
+      await appendFile(`${resultDir}/${tmp_name}-${timestamp}.json`, JSON.stringify(result_obj, null, 4))
+    }
+    catch(e){
+      console.log('Unable to write result, something occured')
+    }
+
+
     process.exit(1)
 }
 
