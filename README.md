@@ -2,6 +2,15 @@
 
 This a simple CLI tool to scrape google search result URLs and store it a Json file.
 
+## Why use this tool?
+
+It is a useful tool to harvest URLs especially with the use of some google Dorks
+
+```sh
+node cli.js search --keyword="inurl:career jobs"
+```
+
+
 ## How to install
 
 Install the depencies

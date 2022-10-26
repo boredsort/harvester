@@ -13,10 +13,10 @@ async function start(argv) {
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "en-US,en;q=0.9,en;q=0.8",
     }
-    const headless = false
+    const headless = true
 
     let searchKey = argv.keyword
-    let pages = argv.page
+    let pages = argv.page 
     
     const app = await harvester.Harvester({headers, headless})
     await app.connect();
