@@ -32,11 +32,11 @@ module.exports.Harvester = async (options) => {
 
         /** ------- Enter a search key word and process -------- */
         try {
-            await page.waitForSelector('input.gLFyf.gsfi');
-            await page.hover('input.gLFyf.gsfi');
-            await page.evaluate( () => { document.querySelector('input.gLFyf.gsfi').value="" })
+            await page.waitForSelector('input.gLFyf');
+            await page.hover('input.gLFyf');
+            await page.evaluate( () => { document.querySelector('input.gLFyf').value="" })
             await sleep(500)
-            await page.type('input.gLFyf.gsfi', search_string);
+            await page.type('input.gLFyf', search_string);
             console.log(`Searching for ${search_string}`)
             await page.keyboard.press('Enter')
         }
